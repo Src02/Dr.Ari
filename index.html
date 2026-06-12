@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Nome do Cirurgião | Cuidados Cirúrgicos</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.85); /* Fundo semi-transparente para o efeito de vidro */
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --accent-color: #004b87; /* Azul sutil para links */
+            --medical-green-light: #eaf7f4;
+            --medical-green-soft: #f2faf8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--medical-green-soft) 40%, var(--bg-color) 70%, var(--medical-green-light) 100%);
+            background-size: 400% 400%;
+            animation: medicalGradient 15s ease infinite; /* Animação suave de fundo */
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        /* Código da animação do fundo */
+        @keyframes medicalGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Container do Vídeo Responsivo (16:9) */
+        .video-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            margin-bottom: 50px;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Seção: Sobre o Médico e Atuação com efeito Glassmorphism sutil */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 50px;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px); /* Suaviza o fundo animado atrás do texto */
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .about-text h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .about-text strong {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .about-image-container {
+            text-align: center;
+        }
+
+        .doctor-img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        /* Seção do Certificado */
+        .certificate-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .certificate-section p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .certificate-img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba(255,255,255,0.8);
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Grid de Contatos com efeito de vidro sutil */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 24px 15px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        @media (hover: hover) {
+            .contact-card:hover {
+                transform: translateY(-3px);
+                background-color: rgba(255, 255, 255, 1);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            }
+            .contact-card:hover h3 {
+                color: var(--accent-color);
+            }
+        }
+
+        .contact-card h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .contact-card h3 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 30px;
+        }
+
+        /* Adaptação para Dispositivos Móveis */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .doctor-img {
+                max-width: 240px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Dr. Nome do Cirurgião</h1>
+            <p class="subtitle">Cirurgia Especializada e Cuidados Avançados</p>
+        </header>
+
+        <main>
+            <!-- Player de Vídeo -->
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="Vídeo de Introdução"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Seção Sobre e Atuação -->
+            <section class="about-section">
+                <div class="about-text">
+                    <h2>Sobre a Especialidade e Atuação</h2>
+                    <p>Atuando na área de <strong>[Inserir Especialidade]</strong>, o foco principal do meu trabalho é aliar o rigor técnico científico ao acolhimento humanizado.</p>
+                    <p>Cada procedimento é planejado de forma personalizada, utilizando técnicas modernas e minimamente invasivas para garantir uma recuperação mais rápida, segura e com o menor desconforto possível para o paciente.</p>
+                    <p>O compromisso vai além do centro cirúrgico: engloba um acompanhamento atento desde a primeira consulta até a completa reabilitação pós-operatória.</p>
+                </div>
+                <div class="about-image-container">
+                    <img src="https://via.placeholder.com/350x450?text=Foto+do+Cirurgião" alt="Dr. Nome do Cirurgião" class="doctor-img">
+                </div>
+            </section>
+
+            <!-- Seção do Certificado Médico -->
+            <div class="certificate-section">
+                <p>Membro Certificado da Sociedade Brasileira de [Sua Área]</p>
+                <img src="https://via.placeholder.com/280x190?text=Certificado+Médico" alt="Certificado Médico do Dr." class="certificate-img">
+            </div>
+
+            <!-- Links de Contato Direto -->
+            <div class="contact-grid">
+                
+                <a href="mailto:contato@cirurgiao.com.br" class="contact-card">
+                    <h2>E-mail</h2>
+                    <h3>contato@cirurgiao.com.br</h3>
+                </a>
+
+                <a href="tel:+5511999999999" class="contact-card">
+                    <h2>Telefone</h2>
+                    <h3>(11) 99999-9999</h3>
+                </a>
+
+                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="contact-card">
+                    <h2>WhatsApp</h2>
+                    <h3>(11) 99999-9999</h3>
+                </a>
+
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Dr. Nome do Cirurgião. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
