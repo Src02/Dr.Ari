@@ -55,8 +55,11 @@
             margin: 50px 0;
         }
 
-        /* Container do Vídeo Seamless */
-        .video-wrapper {
+        /* ==========================================
+           ESTRUTURA DO CARROSSEL SEAMLESS (16:9)
+        ========================================== */
+        .carousel-container {
+            position: relative;
             width: 100%;
             aspect-ratio: 16 / 9;
             background-color: var(--bg-color);
@@ -64,11 +67,90 @@
             overflow: hidden;
         }
 
-        .video-wrapper iframe {
+        .carousel-slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide iframe, .slide img {
             width: 100%;
             height: 100%;
             border: 0;
+            object-fit: cover;
+            display: block;
         }
+
+        /* Bloqueador de cliques superior otimizado (sem quebrar a API do YouTube) */
+        .video-overlay-blocker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 55px; /* Altura exata para cobrir o título e botão partilhar */
+            z-index: 5;
+            background: transparent;
+            pointer-events: auto; /* Captura o clique antes do iframe */
+        }
+
+        /* Setas de Navegação Minimalistas */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            transition: background 0.2s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
+
+        /* Indicadores (Bolinhas) */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .dot.active {
+            background-color: var(--accent-color);
+        }
+
+        /* ========================================== */
 
         /* Seção Sobre o Médico */
         .about-section {
@@ -123,15 +205,13 @@
             margin-bottom: 25px;
         }
 
-        /* VISUALIZAÇÃO DINÂMICA DO CERTIFICADO */
         .certificate-img {
             width: 100%;
-            max-width: 520px; /* Tamanho elegante e perfeitamente legível no Desktop */
-            height: auto; /* Mantém a proporção original do documento */
+            max-width: 520px;
+            height: auto;
             border-radius: 4px;
             display: block;
             margin: 0 auto;
-            transition: max-width 0.3s ease;
         }
 
         /* Grid de Contatos */
@@ -185,7 +265,7 @@
             border-top: 1px solid var(--border-color);
         }
 
-        /* Ajustes Mobile Dinâmicos */
+        /* Ajustes Mobile */
         @media (max-width: 768px) {
             body {
                 padding: 40px 15px;
@@ -209,7 +289,6 @@
                 max-width: 240px;
             }
 
-            /* No mobile, o certificado ganha uma margem de segurança sutil nas laterais */
             .certificate-img {
                 max-width: 90%; 
             }
@@ -217,6 +296,12 @@
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
+            }
+
+            .carousel-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -231,19 +316,43 @@
         </header>
 
         <main>
-            <!-- 1. ESPAÇO DO VÍDEO -->
-            <div class="video-wrapper">
-                <iframe 
-                    src="COLE_O_LINK_DO_VIDEO_AQUI" 
-                    title="Vídeo de Introdução"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+            <div style="margin-bottom: 50px;">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">❮</button>
+                    <button class="carousel-btn next-btn" onclick="moveSlide(1)">❯</button>
+                    
+                    <div class="carousel-slides" id="carouselSlides">
+                        <div class="slide">
+                            <div class="video-overlay-blocker"></div>
+                            <iframe 
+                                src="https://www.youtube.com/embed/t3217H8JppI?autoplay=1&mute=1&playsinline=1&modestbranding=1&rel=0" 
+                                title="Symphony No. 9 ~ Beethoven"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="slide">
+                            <img src="https://lh3.googleusercontent.com/d/1rPVjWY5EBibsWlxfJwionG08sbVq2eOn" alt="Galeria Clinica 1">
+                        </div>
+                        <div class="slide">
+                            <img src="https://lh3.googleusercontent.com/d/1tfdVd6kxazrm8V7YVF_tayE7dXHuyZSj" alt="Galeria Clinica 2">
+                        </div>
+                        <div class="slide">
+                            <img src="https://lh3.googleusercontent.com/d/1okO9Wyz5U5GaBkqZ3WVqBWpcWXXbXW39" alt="Galeria Clinica 3">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
             </div>
 
             <div class="section-divider"></div>
 
-            <!-- Seção Sobre e Atuação -->
             <section class="about-section">
                 <div class="about-text">
                     <h2>Sobre a Especialidade e Atuação</h2>
@@ -259,15 +368,13 @@
 
             <div class="section-divider"></div>
 
-            <!-- Seção do Certificado Médico (Dinâmico) -->
             <section class="certificate-section">
-                <p>Membro Certificado da Sociedade Brasileira de [Sua Área]</p>
+                <p>Membro Certificado da Sociedade Brasileira de Cirurgia Plástica</p>
                 <img src="https://lh3.googleusercontent.com/d/1OGhz16vu5TKKGSocu-sCshs5AiX1fmDt" alt="Certificado Médico do Dr." class="certificate-img">
             </section>
 
             <div class="section-divider"></div>
 
-            <!-- Links de Contato Direto -->
             <div class="contact-grid">
                 
                 <a href="mailto:contato@cirurgiao.com.br" class="contact-card">
@@ -289,10 +396,36 @@
         </main>
 
         <footer>
-            <p>© 2026. Todos os direitos reservados.</p>
+            <p>© 2026 Dr. Nome do Cirurgião. Todos os direitos reservados.</p>
         </footer>
 
     </div>
+
+    <script>
+        let slideIndex = 0;
+        const slidesContainer = document.getElementById('carouselSlides');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = dots.length;
+
+        function updateCarousel() {
+            slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === slideIndex);
+            });
+        }
+
+        function moveSlide(step) {
+            slideIndex += step;
+            if (slideIndex >= totalSlides) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = totalSlides - 1;
+            updateCarousel();
+        }
+
+        function currentSlide(index) {
+            slideIndex = index;
+            updateCarousel();
+        }
+    </script>
 
 </body>
 </html>
