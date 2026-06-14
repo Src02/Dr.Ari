@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nome do Cirurgião | Alta Cirurgia Estética</title>
+    <title>Dr. Nome do Cirurgião | Alta Cirurgia Estética e Reconstrutiva</title>
     <style>
         :root {
             --bg-color: #fbfbfc;
             --card-bg: #ffffff;
             --text-main: #0b1b3d; /* Midnight Blue Profundo */
-            --text-muted: #626d7a;
+            --text-muted: #536071;
             --accent-color: #c5a880; /* Dourado Champagne */
+            --accent-hover: #b3956b;
             --border-color: #eef1f5;
         }
 
@@ -25,47 +26,49 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.8;
-            padding-bottom: 80px; 
-            overflow-x: hidden; /* Garante segurança total contra scrolls horizontais fantasmas */
+            padding-bottom: 40px; 
+            overflow-x: hidden;
         }
 
         .content-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Header Minimalista Integrado */
+        /* ==========================================
+           HEADER MINIMALISTA PREMIUM
+        ========================================== */
         header {
             text-align: center;
-            padding: 60px 20px 40px;
+            padding: 40px 20px;
             background: var(--card-bg);
             border-bottom: 1px solid var(--border-color);
         }
 
         header h1 {
-            font-size: 2.6rem;
-            font-weight: 300;
+            font-size: 2.4rem;
+            font-weight: 400;
             letter-spacing: -0.5px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             color: var(--text-main);
         }
 
         .subtitle {
             color: var(--accent-color);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
+            letter-spacing: 3px;
         }
 
         /* ==========================================
-           CARROSSEL PREMIUM DINÂMICO (CORRIGIDO)
+           HERO CARROSSEL AUTOMÁTICO (SEM SETAS)
         ========================================== */
-        .carousel-full-wrapper {
-            width: 100%; /* Mudado de 100vw para 100% */
+        .hero-carousel-wrapper {
+            width: 100%;
             position: relative;
-            background-color: #000;
+            background-color: #050b18;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(11, 27, 61, 0.04);
         }
@@ -73,9 +76,7 @@
         .carousel-container {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9; 
-            min-height: 400px;
-            max-height: 75vh; 
+            height: 550px; /* Altura imponente para Desktop */
         }
 
         .carousel-slides {
@@ -92,65 +93,67 @@
             height: 100%;
             opacity: 0;
             visibility: hidden;
-            transform: scale(1.02);
-            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
-                        transform 1.2s cubic-bezier(0.25, 1, 0.5, 1),
-                        visibility 1.2s;
+            transition: opacity 1.6s cubic-bezier(0.25, 1, 0.5, 1), visibility 1.6s;
             z-index: 1;
         }
 
         .slide.active {
             opacity: 1;
             visibility: visible;
-            transform: scale(1);
             z-index: 2;
         }
 
-        .slide div.yt-player-container, .slide img {
+        .slide img {
             width: 100%;
             height: 100%;
-            border: 0;
             object-fit: cover;
             display: block;
+            filter: brightness(0.55); /* Escurece suavemente a imagem de fundo para dar leitura ao texto */
         }
 
-        /* Setas de Navegação Premium */
-        .carousel-btn {
+        /* Textos Sobrepostos nas Imagens (Marketing Flutuante) */
+        .slide-caption {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid var(--border-color);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: var(--text-main);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-            z-index: 10;
-        }
-
-        .carousel-btn:hover {
-            background: var(--text-main);
+            bottom: 80px;
+            left: 0;
+            width: 100%;
+            padding: 0 40px;
+            text-align: center;
             color: #ffffff;
-            border-color: var(--text-main);
+            z-index: 5;
+            transform: translateY(20px);
+            transition: transform 1.2s ease;
         }
 
-        .prev-btn { left: 30px; }
-        .next-btn { right: 30px; }
+        .slide.active .slide-caption {
+            transform: translateY(0);
+        }
 
-        /* Indicadores (Traços Minimalistas) */
+        .slide-caption h2 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .slide-caption p {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 1.15rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #f0f2f5;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            letter-spacing: 0.5px;
+        }
+
+        /* Indicadores em Barras Finas */
         .carousel-dots-wrapper {
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0;
             background: var(--card-bg);
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -161,7 +164,7 @@
         }
 
         .dot {
-            width: 24px;
+            width: 35px;
             height: 3px;
             background-color: #e2e8f0;
             cursor: pointer;
@@ -171,96 +174,49 @@
 
         .dot.active {
             background-color: var(--accent-color);
-            width: 45px;
+            width: 60px;
         }
 
-        /* ========================================== */
-
-        /* Barra de Contatos Alinhada */
-        .contact-bar {
-            display: flex;
-            justify-content: center;
-            align-items: stretch; 
-            gap: 20px;
-            margin-top: 20px;
-            margin-bottom: 40px;
+        /* ==========================================
+           LAYOUT LADO A LADO: SOBRE + CERTIFICADO
+        ========================================== */
+        .grid-presentation {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+            align-items: stretch; /* Mantém os dois blocos alinhados verticalmente */
         }
 
-        .contact-card {
-            flex: 1;
-            max-width: 320px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 25px 20px;
-            border-radius: 10px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-main);
-            box-shadow: 0 4px 15px rgba(11, 27, 61, 0.01);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            
-            display: flex;
-            flex-direction: column;
-            justify-content: center; 
-        }
-
-        .contact-card h2 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-color);
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .contact-card h3 {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--text-main);
-            word-break: break-word; 
-        }
-
-        .contact-card.email-card h3 {
-            font-size: 0.95rem; 
-        }
-
-        @media (hover: hover) {
-            .contact-card:hover {
-                transform: translateY(-4px);
-                border-color: var(--accent-color);
-                box-shadow: 0 8px 25px rgba(197, 168, 128, 0.1);
-            }
-        }
-
-        /* Seções estruturais */
         .section-block {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 60px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(11, 27, 61, 0.02);
-        }
-
-        .about-section {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            align-items: center;
+            padding: 50px;
+            box-shadow: 0 4px 20px rgba(11, 27, 61, 0.015);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .about-text h2 {
-            font-size: 2rem;
-            font-weight: 300;
+            font-size: 2.1rem;
+            font-weight: 400;
             margin-bottom: 24px;
             color: var(--text-main);
             letter-spacing: -0.5px;
+            line-height: 1.3;
         }
 
         .about-text p {
             color: var(--text-muted);
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             font-size: 1.05rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
         }
 
         .about-text strong {
@@ -268,184 +224,373 @@
             font-weight: 600;
         }
 
-        .about-image-container {
+        /* Lado do Certificado / Selo Profissional */
+        .credibility-sidebar {
             text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(11, 27, 61, 0.015);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .doctor-img {
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-            margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(11, 27, 61, 0.05);
+        .doctor-profile-img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            border: 3px solid var(--border-color);
+            box-shadow: 0 8px 20px rgba(11, 27, 61, 0.05);
         }
 
-        .certificate-section {
-            text-align: center;
+        .credibility-sidebar h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 8px;
         }
 
-        .certificate-section p {
-            font-size: 0.8rem;
+        .credibility-sidebar .tag-crm {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.85rem;
             color: var(--text-muted);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .certificate-divider {
+            width: 60px;
+            height: 1px;
+            background-color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .credibility-sidebar p {
+            font-size: 0.8rem;
+            color: var(--text-main);
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
         .certificate-img {
             width: 100%;
-            max-width: 500px;
+            max-width: 280px;
             height: auto;
-            border-radius: 6px;
-            display: block;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        /* ==========================================
+           SEÇÃO: VÍDEO DESTACADO INSTITUCIONAL
+        ========================================== */
+        .video-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 20px rgba(11, 27, 61, 0.015);
+        }
+
+        .video-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .video-header h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .video-header p {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            max-width: 900px;
             margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(11, 27, 61, 0.08);
+            background-color: #000;
+        }
+
+        .video-wrapper iframe, 
+        .video-wrapper .yt-player-container {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ==========================================
+           BARRA DE CONTATOS CORPORATIVOS E PADRONIZADOS
+        ========================================== */
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            align-items: stretch; 
+            gap: 24px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            flex: 1;
+            max-width: 360px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            border-radius: 4px; /* Bordas minimalistas e imponentes */
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+        }
+
+        .contact-card h2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px; /* Estilo editorial de luxo */
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-weight: 500;
+            transition: color 0.4s ease;
+        }
+
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif; /* Totalmente integrado às fontes nobres do site */
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--text-main);
+            word-break: break-word; 
+            transition: transform 0.4s ease, color 0.4s ease;
+        }
+
+        /* Efeitos Hover Magnéticos e Padronizados para Todos os Botões */
+        @media (hover: hover) {
+            .contact-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--accent-color);
+                box-shadow: 0 15px 35px rgba(197, 168, 128, 0.08);
+            }
+
+            .contact-card:hover h2 {
+                color: var(--accent-color);
+            }
+            
+            .contact-card:hover h3 {
+                color: var(--accent-color);
+                transform: scale(1.02);
+            }
         }
 
         footer {
             text-align: center;
             color: var(--text-muted);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.85rem;
-            margin-top: 40px;
+            margin-top: 50px;
             padding-top: 30px;
             border-top: 1px solid var(--border-color);
             letter-spacing: 0.5px;
         }
 
-        /* Ajustes Mobile */
-        @media (max-width: 768px) {
-            body {
-                padding-bottom: 40px;
+        /* ==========================================
+           MEDIA QUERIES (RESPONSIVIDADE AJUSTADA)
+        ========================================== */
+        @media (max-width: 992px) {
+            .grid-presentation {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-            
-            header {
-                padding: 40px 16px 20px;
+            .carousel-container {
+                height: 420px;
             }
-
-            header h1 {
+            .slide-caption h2 {
                 font-size: 2rem;
             }
+            .slide-caption p {
+                font-size: 1rem;
+            }
+        }
 
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.9rem;
+            }
             .carousel-container {
-                aspect-ratio: 4 / 3; 
-                min-height: auto;
+                height: 320px;
             }
-
-            .section-block {
-                padding: 30px 20px;
+            .slide-caption {
+                bottom: 40px;
+                padding: 0 20px;
             }
-
+            .slide-caption h2 {
+                font-size: 1.5rem;
+                margin-bottom: 8px;
+            }
+            .slide-caption p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            .section-block, .credibility-sidebar, .video-section {
+                padding: 35px 20px;
+            }
             .contact-bar {
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
             }
-
             .contact-card {
                 width: 100%;
                 max-width: 100%;
             }
-
-            .about-section {
-                grid-template-columns: 1fr;
-                gap: 35px;
-                text-align: center;
-            }
-
-            .carousel-btn {
-                width: 38px;
-                height: 38px;
-            }
-
-            .prev-btn { left: 15px; }
-            .next-btn { right: 15px; }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Header Minimalista Integrado -->
     <header>
         <div class="content-container">
             <h1>Dr. Nome do Cirurgião</h1>
-            <p class="subtitle">Cirurgia Especializada & Cuidados Avançados</p>
+            <p class="subtitle">Cirurgia Plástica de Alta Performance</p>
         </div>
     </header>
 
-    <div class="carousel-full-wrapper">
+    <!-- Hero Carrossel com Transição Automática e Frases de Marketing -->
+    <div class="hero-carousel-wrapper">
         <div class="carousel-container">
-            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">❮</button>
-            <button class="carousel-btn next-btn" onclick="moveSlide(1)">❯</button>
-            
             <div class="carousel-slides" id="carouselSlides">
+                
+                <!-- Slide 1 -->
                 <div class="slide active">
-                    <div id="ytPlayer" class="yt-player-container"></div>
+                    <img src="https://lh3.googleusercontent.com/d/1rPVjWY5EBibsWlxfJwionG08sbVq2eOn" alt="Excelência Médica e Infraestrutura">
+                    <div class="slide-caption">
+                        <h2>CUIDADO PROFISSIONAL</h2>
+                        <p>Infraestrutura cirúrgica de ponta projetada para assegurar máxima proteção, sofisticação e resultados sob medida.</p>
+                    </div>
                 </div>
+                
+                <!-- Slide 2 -->
                 <div class="slide">
-                    <img src="https://lh3.googleusercontent.com/d/1rPVjWY5EBibsWlxfJwionG08sbVq2eOn" alt="Galeria Clinica 1">
+                    <img src="https://lh3.googleusercontent.com/d/1tfdVd6kxazrm8V7YVF_tayE7dXHuyZSj" alt="Atendimento Personalizado">
+                    <div class="slide-caption">
+                        <h2>RIGOR CIENTÍFICO</h2>
+                        <p>Procedimentos guiados pelas atualizações médicas internacionais mais recentes, aliando tecnologia e precisão biológica.</p>
+                    </div>
                 </div>
+                
+                <!-- Slide 3 -->
                 <div class="slide">
-                    <img src="https://lh3.googleusercontent.com/d/1tfdVd6kxazrm8V7YVF_tayE7dXHuyZSj" alt="Galeria Clinica 2">
+                    <img src="https://lh3.googleusercontent.com/d/1okO9Wyz5U5GaBkqZ3WVqBWpcWXXbXW39" alt="Ambiente Hospitalar Premium">
+                    <div class="slide-caption">
+                        <h2>ACOLHIMENTO EXCLUSIVO</h2>
+                        <p>Acompanhamento médico integral em cada etapa da sua jornada, focado em bem-estar e em uma reabilitação serena.</p>
+                    </div>
                 </div>
-                <div class="slide">
-                    <img src="https://lh3.googleusercontent.com/d/1okO9Wyz5U5GaBkqZ3WVqBWpcWXXbXW39" alt="Galeria Clinica 3">
-                </div>
+
             </div>
         </div>
     </div>
     
+    <!-- Indicadores Inferiores do Carrossel -->
     <div class="carousel-dots-wrapper">
         <div class="carousel-dots">
             <span class="dot active" onclick="currentSlide(0)"></span>
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </div>
 
+    <!-- Conteúdo Principal Alinhado -->
     <div class="content-container">
         <main>
-            <section class="section-block about-section">
-                <div class="about-text">
-                    <h2>Sobre a Especialidade</h2>
-                    <p>Atuando na área de <strong>[Inserir Especialidade]</strong>, o foco principal do meu trabalho é aliar o rigor técnico científico ao acolhimento humanizado.</p>
-                    <p>Cada procedimento é planejado de forma personalizada, utilizando técnicas modernas e minimamente invasivas para garantir uma recuperação mais rápida, segura e com o menor desconforto possível para o paciente.</p>
-                    <p>O compromisso vai além do centro cirúrgico: engloba um acompanhamento atento desde a primeira consulta até a completa reabilitação pós-operatória.</p>
-                </div>
+            
+            <!-- Seção de Apresentação Combinada (Sobre + Certificado) -->
+            <div class="grid-presentation">
                 
-                <div class="about-image-container">
-                    <img src="https://lh3.googleusercontent.com/d/1RvpK0IgRUCX1HTLkTxXiDpAPgtx8-XPv" alt="Dr. Nome do Cirurgião" class="doctor-img">
+                <!-- Bloco do Sobre -->
+                <section class="section-block about-text">
+                    <h2>Ciência e Sensibilidade na Busca Pelo Seu Melhor Resultado</h2>
+                    <p>Atuando em <strong>[Inserir Especialidade / Ex: Cirurgia Plástica Estética e Reconstrutiva]</strong>, o foco absoluto do meu trabalho é harmonizar o mais alto rigor técnico-científico ao acolhimento médico humanizado.</p>
+                    <p>Cada intervenção cirúrgica é planejada de forma personalizada e minuciosa. Utilizamos técnicas modernas de abordagem minimamente invasiva para propiciar períodos pós-operatórios previsíveis, seguros e com o menor tempo de recuperação possível.</p>
+                    <p>Nosso compromisso ético transpõe as fronteiras do bloco cirúrgico: engloba um monitoramento rigoroso e atento que vai desde a consulta inicial até a completa consolidação da sua reabilitação.</p>
+                </section>
+                
+                <!-- Bloco de Credibilidade Médica (Ao lado do Sobre) -->
+                <aside class="credibility-sidebar">
+                    <img src="https://lh3.googleusercontent.com/d/1RvpK0IgRUCX1HTLkTxXiDpAPgtx8-XPv" alt="Dr. Nome do Cirurgião" class="doctor-profile-img">
+                    <h3>Dr. Nome do Cirurgião</h3>
+                    <div class="tag-crm">CRM-SP 000000 / RQE 0000</div>
+                    <div class="certificate-divider"></div>
+                    <p>Membro Titular Certificado da Sociedade Brasileira de Cirurgia Plástica</p>
+                    <img src="https://lh3.googleusercontent.com/d/1OGhz16vu5TKKGSocu-sCshs5AiX1fmDt" alt="Selo Oficial SBCP" class="certificate-img">
+                </aside>
+
+            </div>
+
+            <!-- Seção: Vídeo de Apresentação Institucional -->
+            <section class="video-section">
+                <div class="video-header">
+                    <h2>Conheça Nossa Filosofia de Trabalho</h2>
+                    <p>Assista ao vídeo e entenda como a convergência entre segurança hospitalar avançada e personalização estética molda a nossa conduta profissional.</p>
+                </div>
+                <div class="video-wrapper">
+                    <div id="ytPlayer" class="yt-player-container"></div>
                 </div>
             </section>
 
-            <section class="section-block certificate-section">
-                <p>Membro Certificado da Sociedade Brasileira de Cirurgia Plástica</p>
-                <img src="https://lh3.googleusercontent.com/d/1OGhz16vu5TKKGSocu-sCshs5AiX1fmDt" alt="Certificado Médico do Dr." class="certificate-img">
-            </section>
-
+            <!-- Canais Diretos de Agendamento Totalmente Padronizados -->
             <div class="contact-bar">
-                <a href="mailto:contato@cirurgiao.com.br" class="contact-card email-card">
-                    <h2>E-mail</h2>
+                <a href="mailto:contato@cirurgiao.com.br" class="contact-card">
+                    <h2>Comunicação Digital</h2>
                     <h3>contato@cirurgiao.com.br</h3>
                 </a>
                 <a href="tel:+5511999999999" class="contact-card">
-                    <h2>Telefone</h2>
+                    <h2>Central de Atendimento</h2>
                     <h3>(11) 99999-9999</h3>
                 </a>
                 <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="contact-card">
-                    <h2>WhatsApp</h2>
+                    <h2>Agendamento Exclusivo</h2>
                     <h3>(11) 99999-9999</h3>
                 </a>
             </div>
+
         </main>
 
+        <!-- Rodapé Corporativo -->
         <footer>
-            <p>© 2026. Todos os direitos reservados.</p>
+            <p>© 2026 Dr. Nome do Cirurgião. Todos os direitos reservados. Desenvolvimento em conformidade com as normas do CFM.</p>
         </footer>
     </div>
 
+    <!-- Script da API do YouTube -->
     <script>
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
@@ -459,37 +604,28 @@
                 width: '100%',
                 videoId: 't3217H8JppI', 
                 playerVars: {
-                    'autoplay': 1,
-                    'mute': 1,
+                    'autoplay': 0,        
+                    'mute': 0,            
                     'playsinline': 1,
                     'modestbranding': 1, 
-                    'rel': 0,            
-                    'controls': 1        
-                },
-                events: {
-                    'onReady': onPlayerReady
+                    'rel': 0,             
+                    'controls': 1         
                 }
             });
         }
-
-        function onPlayerReady(event) {
-            event.target.playVideo();
-        }
     </script>
 
+    <!-- Script do Carrossel Automático -->
     <script>
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
         const totalSlides = slides.length;
+        let carouselInterval;
 
         function updateCarousel() {
             slides.forEach((slide, index) => {
-                if (index === slideIndex) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
+                slide.classList.toggle('active', index === slideIndex);
             });
 
             dots.forEach((dot, index) => {
@@ -497,17 +633,27 @@
             });
         }
 
-        function moveSlide(step) {
-            slideIndex += step;
-            if (slideIndex >= totalSlides) slideIndex = 0;
-            if (slideIndex < 0) slideIndex = totalSlides - 1;
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % totalSlides;
             updateCarousel();
         }
 
         function currentSlide(index) {
             slideIndex = index;
             updateCarousel();
+            resetTimer(); 
         }
+
+        function startTimer() {
+            carouselInterval = setInterval(nextSlide, 5000); 
+        }
+
+        function resetTimer() {
+            clearInterval(carouselInterval);
+            startTimer();
+        }
+
+        startTimer();
     </script>
 
 </body>
