@@ -11,7 +11,6 @@
             --text-main: #0b1b3d; 
             --text-muted: #536071;
             --accent-color: #c5a880; 
-            --accent-hover: #b3956b;
             --border-color: #eef1f5;
         }
 
@@ -36,9 +35,7 @@
             padding: 0 24px;
         }
 
-        /* ==========================================
-           HEADER MINIMALISTA PREMIUM
-        ========================================== */
+        /* HEADER */
         header {
             text-align: center;
             padding: 40px 20px;
@@ -62,9 +59,7 @@
             letter-spacing: 3px;
         }
 
-        /* ==========================================
-           HERO CARROSSEL AUTOMÁTICO
-        ========================================== */
+        /* HERO CARROSSEL */
         .hero-carousel-wrapper {
             width: 100%;
             position: relative;
@@ -175,9 +170,7 @@
             width: 60px;
         }
 
-        /* ==========================================
-           LAYOUT LADO A LADO
-        ========================================== */
+        /* GRID APRESENTAÇÃO */
         .grid-presentation {
             display: grid;
             grid-template-columns: 1.4fr 1fr;
@@ -300,59 +293,122 @@
             border-radius: 4px;
         }
 
-        /* ==========================================
-           SEÇÃO: VÍDEO DESTACADO INSTITUCIONAL
-        ========================================== */
+        /* SEÇÃO DE VÍDEOS (UM POUCO SOBRE) */
         .video-section {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 50px;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 20px rgba(11, 27, 61, 0.015);
+            margin-bottom: 60px;
         }
 
-        .video-header {
+        .video-section-title {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 35px;
-        }
-
-        .video-header h2 {
             font-size: 2rem;
             font-weight: 400;
             color: var(--text-main);
-            margin-bottom: 12px;
+            margin-bottom: 35px;
+            position: relative;
+            letter-spacing: -0.5px;
         }
 
-        .video-header p {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: var(--text-muted);
-            font-size: 1rem;
+        .video-section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0 auto;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(11, 27, 61, 0.01);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .video-wrapper {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9;
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 12px 35px rgba(11, 27, 61, 0.08);
-            background-color: #000;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            background: #000;
         }
 
-        /* ==========================================
-           BARRA DE CONTATOS
-        ========================================== */
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 24px;
+        }
+
+        .video-info h4 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .video-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        @media (hover: hover) {
+            .video-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--accent-color);
+                box-shadow: 0 15px 30px rgba(11, 27, 61, 0.05);
+            }
+        }
+
+        /* SEÇÃO ENTRE EM CONTATO */
+        .contact-section {
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+        .contact-section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-main);
+            margin-bottom: 35px;
+            position: relative;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0 auto;
+        }
+
         .contact-bar {
             display: flex;
             justify-content: center;
             align-items: stretch; 
             gap: 24px;
-            margin-top: 40px;
-            margin-bottom: 60px;
         }
 
         .contact-card {
@@ -366,7 +422,6 @@
             text-decoration: none;
             color: var(--text-main);
             position: relative;
-            overflow: hidden;
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
             display: flex;
             flex-direction: column;
@@ -389,7 +444,7 @@
             font-weight: 400;
             color: var(--text-main);
             word-break: break-word; 
-            transition: transform 0.4s ease, color 0.4s ease;
+            transition: color 0.4s ease;
         }
 
         @media (hover: hover) {
@@ -411,12 +466,15 @@
             border-top: 1px solid var(--border-color);
         }
 
+        /* RESPONSIVIDADE */
         @media (max-width: 992px) {
             .grid-presentation { grid-template-columns: 1fr; gap: 30px; }
             .carousel-container { height: 420px; }
+            .video-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
         }
         @media (max-width: 768px) {
             .carousel-container { height: 320px; }
+            .video-grid { grid-template-columns: 1fr; gap: 20px; }
             .contact-bar { flex-direction: column; align-items: center; gap: 15px; }
             .contact-card { width: 100%; }
         }
@@ -432,92 +490,62 @@
         </div>
     </header>
 
-    <!-- Carrossel -->
     <div class="hero-carousel-wrapper">
         <div class="carousel-container">
-            <div class="carousel-slides" id="carouselSlides">
-                <div class="slide active">
-                    <img src="https://lh3.googleusercontent.com/d/1rPVjWY5EBibsWlxfJwionG08sbVq2eOn" alt="Excelência Médica">
-                    <div class="slide-caption">
-                        <h2>CUIDADO PROFISSIONAL</h2>
-                        <p>Infraestrutura cirúrgica de ponta projetada para assegurar máxima proteção, sofisticação e resultados sob medida.</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="https://lh3.googleusercontent.com/d/1tfdVd6kxazrm8V7YVF_tayE7dXHuyZSj" alt="Rigor Científico">
-                    <div class="slide-caption">
-                        <h2>RIGOR CIENTÍFICO</h2>
-                        <p>Procedimentos guiados pelas atualizações médicas internacionais mais recentes, aliando tecnologia e precisão biológica.</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="https://lh3.googleusercontent.com/d/1okO9Wyz5U5GaBkqZ3WVqBWpcWXXbXW39" alt="Acolhimento">
-                    <div class="slide-caption">
-                        <h2>ACOLHIMENTO EXCLUSIVO</h2>
-                        <p>Acompanhamento médico integral em cada etapa da sua jornada, focado em bem-estar e em uma reabilitação serena.</p>
-                    </div>
-                </div>
-            </div>
+            <div class="carousel-slides" id="carouselSlides"></div>
         </div>
     </div>
     
     <div class="carousel-dots-wrapper">
-        <div class="carousel-dots">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
     </div>
 
     <div class="content-container">
         <main>
             <div class="grid-presentation">
                 <section class="section-block about-text">
-                    <h2>A Arte da Medicina Moldada Pela Ciência e Pela Singularidade</h2>
+                    <h2>A Arte da Medicine Moldada Pela Ciência e Pela Singularidade</h2>
                     <p class="lead-text">Especializado em <strong>[Sua Especialidade / Ex: Cirurgia Plástica de Alta Definição]</strong>, dedico minha trajetória a fundir a exatidão da alta tecnologia médica ao refinamento estético individualizado.</p>
-                    <p class="body-text">Entendo a cirurgia como um processo de alfaiataria médica: cada anatomia exige um plano cirúrgico único, focado em <strong>resultados naturais e elegantes</strong>. Em nossa prática, utilizamos protocolos avançados de intervenção cirúrgica minimamente invasiva, garantindo pós-operatórios previsíveis.</p>
-                    <p>Para além da excelência técnica, estruturamos uma experiência de <strong>atendimento inteiramente Taylor-made</strong> com suporte contínuo 24/7 para sua reabilitação e bem-estar.</p>
+                    <p class="body-text">Entendo a cirurgia como um processo de alfaiataria médica: cada anatomia exige um plano cirúrgico único, focado em <strong>resultados naturais e elegantes</strong>. Em nossa prática, utilizamos protocols avançados de intervenção cirúrgica minimamente invasiva, garantindo pós-operatórios previsíveis.</p>
+                    <p>Para além da excelência técnica, estruturamos uma experience de <strong>atendimento inteiramente Taylor-made</strong> com suporte contínuo 24/7 para sua reabilitação e bem-estar.</p>
                 </section>
                 
                 <aside class="credibility-sidebar">
-                    <img src="https://lh3.googleusercontent.com/d/1RvpK0IgRUCX1HTLkTxXiDpAPgtx8-XPv" alt="Dr. Nome do Cirurgião" class="doctor-profile-img">
+                    <img id="doctorImg" src="" alt="Dr. Nome do Cirurgião" class="doctor-profile-img">
                     <h3>Dr. Nome do Cirurgião</h3>
                     <div class="tag-crm">CRM-SP 000000 / RQE 0000</div>
                     <div class="certificate-divider"></div>
                     <p>Membro Titular Certificado da Sociedade Brasileira de Cirurgia Plástica</p>
-                    <img src="https://lh3.googleusercontent.com/d/1OGhz16vu5TKKGSocu-sCshs5AiX1fmDt" alt="Selo Oficial SBCP" class="certificate-img">
+                    <img id="certificateImg" src="" alt="Selo Oficial SBCP" class="certificate-img">
                 </aside>
             </div>
 
+            <!-- SEÇÃO DE VÍDEOS -->
             <section class="video-section">
-                <div class="video-header">
-                    <h2>Conheça Nossa Filosofia de Trabalho</h2>
-                    <p>Assista ao vídeo e entenda como a convergência entre segurança hospitalar avançada e personalização estética molda a nossa conduta profissional.</p>
-                </div>
-                <div class="video-wrapper">
-                    <div id="ytPlayer" class="yt-player-container"></div>
-                </div>
+                <h2 class="video-section-title">Um pouco sobre</h2>
+                <div class="video-grid" id="videoGrid"></div>
             </section>
 
-            <!-- BARRA DE CONTATOS (IDs adicionados para automação) -->
-            <div class="contact-bar">
-                <a href="mailto:contato@cirurgiao.com.br" class="contact-card">
-                    <h2>Comunicação Digital</h2>
-                    <h3>contato@cirurgiao.com.br</h3>
-                </a>
-                
-                <!-- Central de ligações comuns -->
-                <a href="#" id="linkTelefone" class="contact-card">
-                    <h2>Central de Atendimento</h2>
-                    <h3 id="textoTelefone">(00) 00000-0000</h3>
-                </a>
-                
-                <!-- WhatsApp Automatizado -->
-                <a href="#" id="btnWhatsapp" target="_blank" rel="noopener" class="contact-card">
-                    <h2>Agendamento Exclusivo</h2>
-                    <h3 id="textoWhatsapp">(00) 00000-0000</h3>
-                </a>
-            </div>
+            <!-- SEÇÃO DE CONTATOS -->
+            <section class="contact-section">
+                <h2 class="contact-section-title">Entre em contato</h2>
+                <div class="contact-bar">
+                    <a href="mailto:contato@cirurgiao.com.br" class="contact-card">
+                        <h2>Email</h2>
+                        <h3>contato@cirurgiao.com.br</h3>
+                    </a>
+                    
+                    <a href="#" id="linkTelefone" class="contact-card">
+                        <h2>Atendimento por Telefone</h2>
+                        <h3 id="textoTelefone">(00) 00000-0000</h3>
+                    </a>
+                    
+                    <a href="#" id="btnWhatsapp" target="_blank" rel="noopener" class="contact-card">
+                        <h2>Atendimento por Chat</h2>
+                        <h3 id="textoWhatsapp">(00) 00000-0000</h3>
+                    </a>
+                </div>
+            </section>
         </main>
 
         <footer>
@@ -525,62 +553,159 @@
         </footer>
     </div>
 
-    <!-- API do YouTube -->
-    <script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('ytPlayer', {
-                height: '100%', width: '100%', videoId: 't3217H8JppI', 
-                playerVars: { 'autoplay': 0, 'mute': 0, 'playsinline': 1, 'modestbranding': 1, 'rel': 0, 'controls': 1 }
-            });
+    <script>
+        const CONFIG = {
+            // 1. GERENCIAMENTO DO CARROSSEL (HeroSlide)
+            slides: [
+                {
+                    imagem: "https://lh3.googleusercontent.com/d/1rPVjWY5EBibsWlxfJwionG08sbVq2eOn",
+                    titulo: "CUIDADO PROFISSIONAL",
+                    texto: "Infraestrutura cirúrgica de ponta projetada para assegurar máxima proteção, sofisticação e resultados sob medida."
+                },
+                {
+                    imagem: "https://lh3.googleusercontent.com/d/1tfdVd6kxazrm8V7YVF_tayE7dXHuyZSj",
+                    titulo: "RIGOR CIENTÍFICO",
+                    texto: "Procedimentos guiados pelas atualizações médicas internacionais mais recentes, aliando tecnologia e precisão biológica."
+                },
+                {
+                    imagem: "https://lh3.googleusercontent.com/d/1okO9Wyz5U5GaBkqZ3WVqBWpcWXXbXW39",
+                    titulo: "ACOLHIMENTO EXCLUSIVO",
+                    texto: "Acompanhamento médico integral em cada etapa da sua jornada, focado em bem-estar e em uma reabilitação serena."
+                }
+            ],
+
+            // 2. CONFIGURAÇÃO DA SEÇÃO DE VÍDEOS ATUALIZADA
+            videos: [
+                {
+                    url: "https://www.youtube.com/embed/t3217H8JppI", 
+                    categoria: "Estética e Simetria",
+                    titulo: "A Proporção Áurea e a Harmonização das Formas"
+                },
+                {
+                    url: "https://www.youtube.com/embed/k1-TrAvp_xs", 
+                    categoria: "Conceito e Filosofia",
+                    titulo: "Rigor Técnico e o Refinamento Clássico na Cirurgia"
+                },
+                {
+                    url: "https://www.youtube.com/embed/4FIMsKKvBRM",
+                    categoria: "Inovação Médica",
+                    titulo: "A Orquestração e a Complexidade dos Novos Protocolos"
+                }
+            ],
+
+            // 3. FOTOS DA BIOGRAFIA SIDERBAR
+            biografia: {
+                fotoDoutor: "https://lh3.googleusercontent.com/d/1RvpK0IgRUCX1HTLkTxXiDpAPgtx8-XPv",
+                fotoCertificado: "https://lh3.googleusercontent.com/d/1OGhz16vu5TKKGSocu-sCshs5AiX1fmDt"
+            },
+
+            // 4. CONFIGURAÇÃO DE CONTATOS ATIVOS
+            contatos: {
+                whatsappNumero: "5511999999999", 
+                whatsappTexto: "(11) 99999-9999",  
+                telefoneNumero: "+5511999999999", 
+                telefoneTexto: "(11) 99999-9999"   
+            }
+        };
+
+
+        // =======================================================
+        // MOTOR DE EXECUÇÃO AUTOMÁTICO (NÃO ALTERAR)
+        // =======================================================
+        
+        function resolverLinkImagem(url) {
+            if (url.includes('drive.google.com')) {
+                let id = '';
+                if (url.includes('/d/')) {
+                    id = url.split('/d/')[1].split('/')[0];
+                } else if (url.includes('id=')) {
+                    id = url.split('id=')[1].split('&')[0];
+                }
+                return id ? `http://googleusercontent.com/profile/picture/${id}` : url;
+            }
+            return url;
         }
-    </script>
 
-    <!-- Carrossel Automático -->
-    <script>
+        document.getElementById('doctorImg').src = resolverLinkImagem(CONFIG.biografia.fotoDoutor);
+        document.getElementById('certificateImg').src = resolverLinkImagem(CONFIG.biografia.fotoCertificado);
+
+        // Renderiza o Carrossel
+        const containerSlides = document.getElementById('carouselSlides');
+        const containerDots = document.getElementById('carouselDots');
+        
+        containerSlides.innerHTML = "";
+        containerDots.innerHTML = "";
+
+        CONFIG.slides.forEach((slide, index) => {
+            const statusClasse = index === 0 ? 'active' : '';
+            const urlTratada = resolverLinkImagem(slide.imagem);
+            
+            containerSlides.insertAdjacentHTML('beforeend', `
+                <div class="slide ${statusClasse}">
+                    <img src="${urlTratada}" alt="${slide.titulo}">
+                    <div class="slide-caption">
+                        <h2>${slide.titulo}</h2>
+                        <p>${slide.texto}</p>
+                    </div>
+                </div>
+            `);
+
+            containerDots.insertAdjacentHTML('beforeend', `
+                <span class="dot ${statusClasse}" onclick="currentSlide(${index})"></span>
+            `);
+        });
+
+        // Lógica do carrossel
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
+        
         function updateCarousel() {
             slides.forEach((s, i) => s.classList.toggle('active', i === slideIndex));
             dots.forEach((d, i) => d.classList.toggle('active', i === slideIndex));
         }
-        function nextSlide() { slideIndex = (slideIndex + 1) % slides.length; updateCarousel(); }
-        function currentSlide(i) { slideIndex = i; updateCarousel(); clearInterval(carouselInterval); carouselInterval = setInterval(nextSlide, 5000); }
+        
+        function nextSlide() { 
+            if(slides.length > 0) {
+                slideIndex = (slideIndex + 1) % slides.length; 
+                updateCarousel(); 
+            }
+        }
+        
+        function currentSlide(i) { 
+            slideIndex = i; 
+            updateCarousel(); 
+            clearInterval(carouselInterval); 
+            carouselInterval = setInterval(nextSlide, 5000); 
+        }
+        
         let carouselInterval = setInterval(nextSlide, 5000);
-    </script>
 
+        // Renderiza a Nova Grade de Vídeos
+        const containerVideos = document.getElementById('videoGrid');
+        containerVideos.innerHTML = "";
 
-    <!-- =======================================================
-         CENTRAL DE CONTROLE: ALTERE SEUS NÚMEROS AQUI ABAIXO!
-         ======================================================= -->
-    <script>
-        // CONFIGURAÇÃO DO WHATSAPP
-        // Digite apenas os números (com o 55 da região + DDD + Número)
-        const numeroWhatsappFoco = "5511999999999"; 
-        // Como o número deve aparecer legível na tela do site
-        const textoExibidoWhats  = "(11) 99999-9999"; 
+        CONFIG.videos.forEach(video => {
+            containerVideos.insertAdjacentHTML('beforeend', `
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="${video.url}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>${video.categoria}</h4>
+                        <h3>${video.titulo}</h3>
+                    </div>
+                </div>
+            `);
+        });
 
-        // CONFIGURAÇÃO DA CENTRAL DE TELEFONE (LIGAÇÃO NORMAL)
-        const numeroLigacaoFoco  = "+5511999999999"; 
-        const textoExibidoTel    = "(11) 99999-9999"; 
-
-        
-        // --- SISTEMA AUTOMÁTICO (Não mexer daqui para baixo) ---
-        const mensagemWhatsCodificada = encodeURIComponent("Olá! Gostaria de solicitar informações sobre agendamento de consultas.");
-        
-        // Atualiza o botão do WhatsApp
-        document.getElementById('btnWhatsapp').href = `https://wa.me/${numeroWhatsappFoco}?text=${mensagemWhatsCodificada}`;
-        document.getElementById('textoWhatsapp').innerText = textoExibidoWhats;
-        
-        // Atualiza o botão de Telefone
-        document.getElementById('linkTelefone').href = `tel:${numeroLigacaoFoco}`;
-        document.getElementById('textoTelefone').innerText = textoExibidoTel;
+        // Injeção de Contatos
+        const msgWhats = encodeURIComponent("Olá! Gostaria de solicitar informações sobre agendamento de consultas.");
+        document.getElementById('btnWhatsapp').href = `https://wa.me/${CONFIG.contatos.whatsappNumero}?text=${msgWhats}`;
+        document.getElementById('textoWhatsapp').innerText = CONFIG.contatos.whatsappTexto;
+        document.getElementById('linkTelefone').href = `tel:${CONFIG.contatos.telefoneNumero}`;
+        document.getElementById('textoTelefone').innerText = CONFIG.contatos.telefoneTexto;
     </script>
 
 </body>
