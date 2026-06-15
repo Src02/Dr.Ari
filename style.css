@@ -13,14 +13,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Playfair Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* BASE DO SITE: Textos de leitura usam fontes limpas (sans-serif) para máxima legibilidade */
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
+}
+
+/* ✒️ TIPOGRAFIA SERIFADA: Forçando Playfair Display em todos os títulos e subtítulos */
+header h1, 
+header .subtitle,
+.slide-content h2, 
+.card-profile h2, 
+.sidebar-credibility h3,
+.membership-text,
+.video-column h2, 
+.services-column h2, 
+.service-meta h3,
+.contact-title,
+.modal-content h3 {
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .container {
@@ -52,7 +68,7 @@ header {
 
 header h1 {
     font-size: 2.4rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -0.5px;
     color: var(--text-main);
     margin-bottom: 12px;
@@ -60,10 +76,10 @@ header h1 {
 
 header .subtitle {
     color: var(--accent-color);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
@@ -138,7 +154,6 @@ header .subtitle {
 }
 
 .slide-content p {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1.15rem;
     color: #f0f2f5;
     font-weight: 300;
@@ -213,7 +228,6 @@ header .subtitle {
 }
 
 .body-text {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--text-muted);
     font-size: 1.05rem;
     margin-bottom: 22px;
@@ -221,6 +235,7 @@ header .subtitle {
 }
 
 .body-text::first-letter {
+    font-family: 'Playfair Display', serif;
     font-size: 3.2rem;
     float: left;
     line-height: 0.8;
@@ -231,7 +246,6 @@ header .subtitle {
 }
 
 .body-text-plain {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--text-muted);
     font-size: 1.05rem;
     margin-bottom: 22px;
@@ -262,13 +276,12 @@ header .subtitle {
 }
 
 .sidebar-credibility h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 8px;
 }
 
 .crm-tag {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 25px;
@@ -284,9 +297,9 @@ header .subtitle {
 }
 
 .membership-text {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: 600;
     margin-bottom: 20px;
     line-height: 1.5;
@@ -394,7 +407,7 @@ header .subtitle {
 }
 
 .service-meta h3 {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 400;
     color: var(--text-main);
     margin-bottom: 6px;
@@ -402,7 +415,6 @@ header .subtitle {
 }
 
 .service-meta p {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.5;
@@ -524,7 +536,6 @@ header .subtitle {
 }
 
 .modal-content p {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1rem;
     color: var(--text-muted);
     line-height: 1.75;
@@ -538,7 +549,6 @@ header .subtitle {
     justify-content: center;
     background: transparent;
     color: var(--text-main);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-weight: 500;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -606,7 +616,6 @@ header .subtitle {
 }
 
 .contact-card span {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -616,7 +625,6 @@ header .subtitle {
 }
 
 .contact-card h4 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 0.95rem;
     font-weight: 400;
     color: var(--text-main);
@@ -639,7 +647,6 @@ header .subtitle {
 footer {
     text-align: center;
     color: var(--text-muted);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 0.85rem;
     margin-top: 50px;
     padding: 30px 0;
