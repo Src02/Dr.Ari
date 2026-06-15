@@ -51,10 +51,11 @@ O código-fonte é separado de maneira limpa para facilitar manutenções futura
 ```
 
 🛠️ Tecnologias
-HTML5 Semântico
 
-CSS3 (Custom Properties / Flexbox e CSS Grid)
+* HTML5 Semântico
 
-JavaScript Vanilla (ES6+)
+* CSS3 (Custom Properties / Flexbox e CSS Grid)
 
-Google Fonts API
+* JavaScript Vanilla (ES6+)
+
+* Google Fonts API
