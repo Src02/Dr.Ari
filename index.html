@@ -38,7 +38,7 @@
         /* HEADER */
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             background: var(--card-bg);
             border-bottom: 1px solid var(--border-color);
         }
@@ -47,7 +47,7 @@
             font-size: 2.4rem;
             font-weight: 400;
             letter-spacing: -0.5px;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             color: var(--text-main);
         }
 
@@ -57,6 +57,9 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 3px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
         /* HERO CARROSSEL */
@@ -103,15 +106,20 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            filter: brightness(0.55); 
+            filter: brightness(0.45); 
         }
 
         .slide-caption {
             position: absolute;
-            bottom: 80px;
+            bottom: 0;
             left: 0;
             width: 100%;
-            padding: 0 40px;
+            height: 100%;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             color: #ffffff;
             z-index: 5;
@@ -140,6 +148,7 @@
             color: #f0f2f5;
             text-shadow: 0 2px 8px rgba(0,0,0,0.4);
             letter-spacing: 0.5px;
+            line-height: 1.6;
         }
 
         .carousel-dots-wrapper {
@@ -217,6 +226,7 @@
             position: relative;
             padding-left: 15px;
             border-left: 3px solid var(--accent-color);
+            text-align: left;
         }
 
         .about-text p.body-text::first-letter {
@@ -466,17 +476,109 @@
             border-top: 1px solid var(--border-color);
         }
 
-        /* RESPONSIVIDADE */
-        @media (max-width: 992px) {
-            .grid-presentation { grid-template-columns: 1fr; gap: 30px; }
-            .carousel-container { height: 420px; }
-            .video-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        /* =======================================================
+           REFINAMENTO EXCLUSIVO PARA RESPONSIVIDADE E MOBILE
+           ======================================================= */
+        
+        @media (max-width: 1024px) {
+            .grid-presentation { 
+                grid-template-columns: 1fr; 
+                gap: 32px; 
+            }
+            .carousel-container { 
+                height: 480px; 
+            }
+            .video-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 24px; 
+            }
         }
+
         @media (max-width: 768px) {
-            .carousel-container { height: 320px; }
-            .video-grid { grid-template-columns: 1fr; gap: 20px; }
-            .contact-bar { flex-direction: column; align-items: center; gap: 15px; }
-            .contact-card { width: 100%; }
+            header {
+                padding: 40px 16px;
+            }
+            header h1 {
+                font-size: 1.95rem;
+            }
+            .subtitle {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+            }
+            .carousel-container { 
+                height: 400px; 
+            }
+            .slide-caption {
+                padding: 30px 20px;
+            }
+            .slide-caption h2 {
+                font-size: 1.85rem;
+                margin-bottom: 12px;
+            }
+            .slide-caption p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            .dot {
+                width: 24px;
+            }
+            .dot.active {
+                width: 40px;
+            }
+            .section-block {
+                padding: 32px 24px;
+            }
+            .about-text h2 {
+                font-size: 1.75rem;
+                margin-bottom: 20px;
+            }
+            .video-grid { 
+                grid-template-columns: 1fr; 
+                gap: 24px; 
+            }
+            .contact-bar { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 16px; 
+            }
+            .contact-card { 
+                width: 100%; 
+                max-width: 100%;
+                padding: 32px 20px;
+            }
+            .contact-section-title, .video-section-title {
+                font-size: 1.65rem;
+                margin-bottom: 28px;
+            }
+        }
+
+        /* Ajuste fino para dispositivos muito pequenos (Mobile Portrait) */
+        @media (max-width: 480px) {
+            .content-container {
+                padding: 0 16px;
+            }
+            .carousel-container { 
+                height: 360px; 
+            }
+            .slide-caption h2 {
+                font-size: 1.6rem;
+            }
+            .slide-caption p {
+                font-size: 0.9rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 4; /* Evita estouro de texto em telas minúsculas */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .section-block {
+                padding: 28px 16px;
+            }
+            .about-text p.lead-text {
+                font-size: 1.1rem;
+            }
+            .credibility-sidebar {
+                padding: 32px 16px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -504,10 +606,10 @@
         <main>
             <div class="grid-presentation">
                 <section class="section-block about-text">
-                    <h2>A Arte da Medicine Moldada Pela Ciência e Pela Singularidade</h2>
+                    <h2>A Arte da Medicina Moldada Pela Ciência e Pela Singularidade</h2>
                     <p class="lead-text">Especializado em <strong>[Sua Especialidade / Ex: Cirurgia Plástica de Alta Definição]</strong>, dedico minha trajetória a fundir a exatidão da alta tecnologia médica ao refinamento estético individualizado.</p>
-                    <p class="body-text">Entendo a cirurgia como um processo de alfaiataria médica: cada anatomia exige um plano cirúrgico único, focado em <strong>resultados naturais e elegantes</strong>. Em nossa prática, utilizamos protocols avançados de intervenção cirúrgica minimamente invasiva, garantindo pós-operatórios previsíveis.</p>
-                    <p>Para além da excelência técnica, estruturamos uma experience de <strong>atendimento inteiramente Taylor-made</strong> com suporte contínuo 24/7 para sua reabilitação e bem-estar.</p>
+                    <p class="body-text">Entendo a cirurgia como um processo de alfaiataria médica: cada anatomia exige um plano cirúrgico único, focado em <strong>resultados naturais e elegantes</strong>. Em nossa prática, utilizamos protocolos avançados de intervenção cirúrgica minimamente invasiva, garantindo pós-operatórios previsíveis.</p>
+                    <p>Para além da excelência técnica, estruturamos uma experiência de <strong>atendimento inteiramente Taylor-made</strong> com suporte contínuo 24/7 para sua reabilitação e bem-estar.</p>
                 </section>
                 
                 <aside class="credibility-sidebar">
