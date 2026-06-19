@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Alexander Vadim | Alta Cirurgia Estética e Reconstrutiva</title>
-    
-    <!-- Google Fonts original restaurada -->
+    <title>Dr. Ari Gonçalves | Cirurgião Plástico</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Vínculo com o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
     <header>
         <div class="container">
-            <h1>DR. ALEXANDER VADIM</h1>
-            <p class="subtitle">Confiança Construída com Tempo e Dedicação: Sua Jornada de Transformação em Mãos Experientes.</p>
+            <img src="https://www.saogoncaloshopping.com.br/_next/image?url=https%3A%2F%2Fpublic.esperienza.com.br%2Fsaogoncaloshopping-hTSS9TgSYUnv6G5ABNPRm7xqoTXHGGjU%2Floja%2F141-26-12-2023-ERHUF8PGXV.jpg&w=3840&q=75" alt="Vip Clinique Oficial" class="header-logo">
+            <h1>Doutor Ari Gonçalves</h1>
+            <p class="subtitle">Cirurgia Plástica com a segurança de mais de 30 anos de experiência.</p>
         </div>
     </header>
 
-    <!-- CARROSSEL HERO -->
     <section class="hero-carousel">
         <div class="carousel-track" id="carouselSlides"></div>
     </section>
@@ -32,55 +29,23 @@
 
     <div class="container">
         <main>
-            <div class="main-grid">
-                
-                <!-- CONTEÚDO DA APRESENTAÇÃO -->
-                <section class="card-profile">
-                    <h2>A Arte da Medicina Moldada Pela Ciência e Pela Singularidade</h2>
-                    <p class="lead-text">Especializado em <strong>Cirurgia Plástica Avançada e Alta Definição</strong>, dedico minha trajetória a fundir a exatidão da alta tecnologia médica ao refinamento estético individualizado.</p>
-                    <p class="body-text">Entendo a cirurgia como um processo de alfaiataria médica: cada anatomia exige um plano cirúrgico único, focado em <strong>resultados naturais e elegantes</strong>. Em nossa prática, utilizamos protocolos avançados de intervenção cirúrgica minimamente invasiva, garantindo pós-operatórios previsíveis.</p>
-                    <p class="body-text-plain">Para além da excelência técnica, estruturamos uma experiência de <strong>atendimento inteiramente Taylor-made</strong> com suporte contínuo 24/7 para sua reabilitação e bem-estar.</p>
-                </section>
-                
-                <!-- SIDEBAR DE CREDIBILIDADE -->
-                <aside class="sidebar-credibility">
-                    <img id="doctorImg" src="" alt="Dr. Alexander Vadim" class="doctor-avatar">
-                    <h3>Dr. Alexander Vadim</h3>
-                    <div class="crm-tag">CRM-SP 184920 / RQE 9421</div>
-                    <div class="divider"></div>
-                    <p class="membership-text">Membro Titular Certificado da Sociedade Brasileira de Cirurgia Plástica</p>
-                    <img id="certificateImg" src="" alt="Certificado de Especialista Oficial" class="seal-img">
-                </aside>
-            </div>
-
-            <!-- SEÇÃO INTEGRADA (VÍDEO E ATUAÇÃO LADO A LADO) -->
-            <section class="showcase-section">
-                <div class="showcase-grid">
-                    
-                    <!-- Coluna do Vídeo -->
-                    <div class="video-column">
-                        <h2>Apresentação</h2>
-                        <div class="video-highlight-container">
-                            <div class="video-wrapper">
-                                <iframe id="mainVideo" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
+            <section class="video-section">
+                <h2>Conheça o Dr. Ari Gonçalves</h2>
+                <div class="video-highlight-container">
+                    <div class="video-wrapper">
+                        <iframe id="mainVideo" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-
-                    <!-- Coluna das Áreas de Atuação -->
-                    <div class="services-column">
-                        <h2>Áreas de Atuação</h2>
-                        <div class="services-list" id="servicesGrid"></div>
-                    </div>
-
                 </div>
             </section>
 
-            <!-- SEÇÃO DE CONTATOS (LADO A LADO) -->
+            <section class="services-section">
+                <h2>Procedimentos</h2>
+                <div class="services-text-grid" id="servicesGrid"></div>
+            </section>
+
             <section class="contact-section">
-                <h2 class="contact-title">Entre em contato</h2>
+                <h2 class="contact-title">Agende sua Consulta</h2>
                 <div class="contact-grid">
-                    
                     <a href="mailto:exemplo@gmail.com" class="contact-card">
                         <span>Por Email</span>
                         <h4 id="textoEmail">exemplo@gmail.com</h4>
@@ -95,36 +60,26 @@
                         <span>Por Chat</span>
                         <h4 id="textoWhatsapp">(XX) XXXXX-XXXX</h4>
                     </a>
-                    
                 </div>
             </section>
         </main>
 
-        <!-- RODAPÉ -->
         <footer>
-            <p>© 2026. Todos os direitos reservados. Em conformidade com as normas do CFM.</p>
+            <p>© 2026. Todos os direitos reservados.</p>
         </footer>
     </div>
 
-    <!-- JANELA DETALHADA MODAL (REESTRUTURADA E ALINHADA) -->
     <div class="modal-overlay" id="serviceModal" onclick="fecharModal(event)">
         <div class="modal-container" onclick="event.stopPropagation()">
             <button class="modal-close-btn" onclick="fecharModal(event)">✕</button>
-            
-            <div class="modal-hero-container">
-                <img id="modalImg" src="" alt="" class="modal-hero-img">
-            </div>
-            
             <div class="modal-content">
-                <h3 id="modalTitle">Título do Serviço</h3>
+                <h3 id="modalTitle"></h3>
                 <div class="modal-divider"></div>
-                <p id="modalDescription">Descrição detalhada.</p>
-                <a href="#" id="modalActionLink" target="_blank" rel="noopener" class="modal-action-btn">Solicitar Informações</a>
+                <p id="modalDescription">Descrição detalhada do procedimento.</p>
             </div>
         </div>
     </div>
 
-    <!-- Vínculo com o arquivo JS externo (carregado ao final do body por performance) -->
     <script src="script.js"></script>
 </body>
 </html>

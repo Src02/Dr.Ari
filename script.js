@@ -1,60 +1,136 @@
 // CONFIGURAÇÃO CENTRAL DE MANUTENÇÃO DO SITE
 const CONFIG = {
     slides: [
-        {
-            imagem: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1470&auto=format&fit=cover",
-            titulo: "CUIDADO PROFISSIONAL",
-            texto: "Infraestrutura cirúrgica de ponta projetada para assegurar máxima proteção, sofisticação e resultados sob medida."
-        },
-        {
-            imagem: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1468&auto=format&fit=cover",
-            titulo: "RIGOR CIENTÍFICO",
-            texto: "Procedimentos guides pelas updates médicas internacionais mais recentes, aliando tecnologia e precisão biológica."
-        },
-        {
-            imagem: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1374&auto=format&fit=cover",
-            titulo: "ACOLHIMENTO EXCLUSIVO",
-            texto: "Acompanhamento médico integral em cada etapa da sua jornada, focado em bem-estar e em uma reabilitação serena."
-        }
+        { imagem: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1468&auto=format&fit=cover" },
+        { imagem: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1470&auto=format&fit=cover" },
+        { imagem: "https://images.unsplash.com/photo-1584515933487-78021db49905?q=80&w=1470&auto=format&fit=cover" }
     ],
 
     videoApresentacao: "https://www.youtube.com/embed/Nql4yQsVpHk",
 
-    servicos: [
+    // Categorias estruturadas em ordem alfabética com textos revisados para máxima clareza
+    categoriasProcedimentos: [
         {
-            imagem: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=800&auto=format&fit=cover",
-            titulo: "Contorno Corporal Avançado",
-            descricao: "Técnicas modernas de lipoaspiração de alta definição (LAD) e mapeamento muscular estruturado.",
-            detalhado: "O Contorno Corporal Avançado une tecnologia cirúrgica de última geração à análise detalhada da anatomia muscular profunda. Através de metodologias como a Lipoaspiração de Alta Definição (LAD), é possível remover depósitos de gordura localizada com extrema exatidão, valorizando a musculatura subjacente e desenhando transições suaves e naturais, totalmente personalizadas para a estrutura corporal de cada paciente."
+            nomeCategoria: "Cirurgia Facial",
+            itens: [
+                {
+                    titulo: "Blefaroplastia",
+                    detalhado: "Cirurgia indicada para o rejuvenescimento da região orbital. O procedimento remove com precisão o excesso de pele flácida e as bolsas de gordura das pálpebras superiores e inferiores, suavizando o aspecto de olhar cansado ou envelhecido e restabelecendo o contorno natural dos olhos."
+                },
+                {
+                    titulo: "Cirurgia do Xantelasma",
+                    detalhado: "Procedimento cirúrgico ambulatorial dedicado à remoção de depósitos amarelados de colesterol (xantelasmas) localizados nas pálpebras. Realizado sob anestesia local, foca na excisão delicada da lesão e no fechamento com suturas finas para preservar a estética da região periocular."
+                },
+                {
+                    titulo: "Excisão e Sutura Simples",
+                    detalhado: "Intervenção cirúrgica de pequeno porte realizada em ambiente ambulatorial para a retirada de pequenas lesões cutâneas, sinais, pintas ou irregularidades na pele. A técnica prioriza o fechamento meticuloso das bordas para assegurar uma cicatrização discreta."
+                },
+                {
+                    titulo: "Exerese de Cisto Dermoide",
+                    detalhado: "Remoção cirúrgica completa e segura de nódulos subcutâneos benignos (cistos dermoides). O procedimento é planejado por meio de incisões estratégicas posicionadas ao longo das linhas de força da pele, visando minimizar a visibilidade de cicatrizes futuras."
+                },
+                {
+                    titulo: "Lifting Facial (Ritidoplastia)",
+                    detalhado: "Cirurgia de alta complexidade desenhada para tratar de forma global o envelhecimento da face e do pescoço. Através do reposicionamento profundo dos tecidos musculares e da remoção do excesso de pele flácida, redefine o contorno da mandíbula e atenua sulcos profundos com elegância e naturalidade."
+                },
+                {
+                    titulo: "Otoplastia",
+                    detalhado: "Cirurgia plástica estruturada para corrigir alterações estéticas ou anatômicas na orelha externa, com destaque para a correção das chamadas 'orelhas de abano'. O procedimento remodela a cartilagem local, conferindo um posicionamento mais simétrico e proporcional à face."
+                },
+                {
+                    titulo: "Rinoplastia",
+                    detalhado: "Procedimento cirúrgico altamente personalizado voltado para a remodelação da estrutura nasal. Visa harmonizar o formato, a projeção e a ponta do nariz em relação ao restante do rosto, mantendo ou aprimorando rigorosamente a função respiratória do paciente."
+                },
+                {
+                    titulo: "Septoplastia",
+                    detalhado: "Cirurgia funcional corretiva que tem como objetivo alinhar o septo nasal quando este apresenta desvios que obstruem as vias aéreas. Ao centralizar o septo, elimina-se o bloqueio mecânico ao fluxo de ar, trazendo alívio para dificuldades respiratórias e roncos."
+                },
+                {
+                    titulo: "Turbinectomia",
+                    detalhado: "Intervenção cirúrgica direcionada à redução volumétrica das conchas nasais (cornetos hipertróficos), popularmente conhecidas como 'carne esponjosa'. É indicada para o tratamento da obstrução nasal crônica que não respondeu adequadamente aos tratamentos clínicos."
+                }
+            ]
         },
         {
-            imagem: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=cover",
-            titulo: "Cirurgias de Mama",
-            descricao: "Inclusão estruturada de próteses de silicone, mastopexia ou redução com foco em simetria biológica.",
-            detalhado: "Nossa abordagem em cirurgias mamárias envolve o planejamento preciso focado nas proporções do tórax e no caimento harmônico dos tecidos. Realizamos a mamoplastia de aumento utilizando a técnica de sutiã interno para maior estabilidade da prótese, a mastopexia para remodelar e elevar mamas flácidas, além de cirurgias redutoras estruturadas que priorizam o alívio functional associado ao perfeito refinamento estético."
+            nomeCategoria: "Cirurgia Corporal e Mamária",
+            itens: [
+                {
+                    titulo: "Abdominoplastia",
+                    detalhado: "Cirurgia plástica indicada para a restauração do contorno abdominal. O procedimento remove o excesso de pele e o tecido adiposo localizado abaixo do umbigo, além de realizar a plicatura (reaproximação e sutura) dos músculos retos abdominais para corrigir a diástase."
+                },
+                {
+                    titulo: "Cirurgia de Ginecomastia",
+                    detalhado: "Procedimento focado na correção do aumento benigno e excessivo das mamas em pacientes do sexo masculino. Combina a remoção cirúrgica direta do tecido glandular hipertrófico com a lipoaspiração da gordura adjacente, restabelecendo um contorno peitoral plano e natural."
+                },
+                {
+                    titulo: "Lipoaspiração",
+                    detalhado: "Técnica cirúrgica desenhada para a remoção precisa de depósitos de gordura localizada que persistem mesmo com hábitos saudáveis, dieta e exercícios. É indicada para harmonizar e esculpir o contorno corporal em áreas como abdômen, flancos, coxas e braços."
+                },
+                {
+                    titulo: "Mamoplastia de Aumento",
+                    detalhado: "Cirurgia voltada para o incremento do volume, projeção e simetria das mamas por meio do uso de implantes de silicone de última geração. O plano de colocação e o perfil da prótese são discutidos e escolhidos individualmente, adequando-se ao biotipo da paciente."
+                },
+                {
+                    titulo: "Mamoplastia Redutora",
+                    detalhado: "Procedimento indicado para diminuir o tamanho e o peso das mamas quando o excesso de tecido causa dores na coluna, desconforto nos ombros ou desproporção estética. A cirurgia remove gordura, glândula e pele, reestruturando a mama em uma posição mais alta."
+                },
+                {
+                    titulo: "Mastopexia",
+                    detalhado: "Também conhecida como 'lifting de mamas', reposiciona e remodela mamas que apresentam queda (ptose mamária) devido à amamentação, oscilações de peso ou envelhecimento. O tecido é suspenso, o excesso de pele é retirado e a aréola é elevada para um formato firme."
+                },
+                {
+                    titulo: "Prótese de Mama",
+                    detalhado: "Inclusão especializada de implantes mamários de gel de silicone altamente coeso. O procedimento atende pacientes que buscam reestabelecer o volume e o colo mamário perdidos com o tempo ou obter ganho de volume, priorizando a segurança e a biocompatibilidade."
+                }
+            ]
         },
         {
-            imagem: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=cover",
-            titulo: "Rejuvenescimento Facial",
-            descricao: "Procedimentos detalhados como rinoplastia estruturada e lifting facial, mantendo a naturalidade.",
-            detalhado: "O Rejuvenescimento Facial foca no reatrelamento de volumes e na reestruturação dos tecidos profundos da face, evitando estigmas de pele esticada. Unimos o Deep Plane Facelift ao tratamento das pálpebras (blefaroplastia) e à rinoplastia estruturada, restaurando a arquitetura facial de maneira elegante, discreta e devolvendo o aspecto descansado que o tempo suavizou."
+            nomeCategoria: "Procedimentos Estéticos e Injetáveis",
+            itens: [
+                {
+                    titulo: "Ácido Poliláctico (Sculptra)",
+                    detalhado: "Tratamento injetável moderno com foco no estímulo biológico de colágeno. Atua nas camadas profundas da pele reestruturando os tecidos, combatendo de forma progressiva a flacidez e melhorando visivelmente a firmeza e a espessura cutânea facial ou corporal."
+                },
+                {
+                    titulo: "Aplicação de Toxina Botulínica",
+                    detalhado: "Procedimento minimamente invasivo consagrado para o tratamento e prevenção de rugas dinâmicas (linhas formadas pela mímica facial, como na testa e pés de galinha). Age relaxando temporariamente os músculos aplicados, conferindo um aspecto descansado."
+                },
+                {
+                    titulo: "Microagulhamento",
+                    detalhado: "Procedimento estético que utiliza um dispositivo com microagulhas estéreis para criar canais microscópicos controlados na derme. Esse estímulo induz a produção natural de colágeno e elastina, sendo ideal para suavizar cicatrizes, poros abertos e estrias."
+                },
+                {
+                    titulo: "Peeling Químico",
+                    detalhado: "Aplicação orientada de soluções químicas sobre a pele para promover uma descamação controlada e acelerar a renovação celular. Indicado para melhorar a textura epidérmica global, atenuar manchas superficiais, melasma e sequelas de acne."
+                },
+                {
+                    titulo: "Preenchimento Cutâneo",
+                    detalhado: "Técnica focada na atenuação direta de rugas estáticas e sulcos profundos (como o sulco nasogeniano, conhecido como 'bigode chinês'). Proporciona um efeito de sustentação e nivelamento imediato através da aplicação nas camadas específicas da pele."
+                },
+                {
+                    titulo: "Preenchimento Facial",
+                    detalhado: "Uso estratégico de preenchedores biocompatíveis (como o ácido hialurônico) para repor os volumes perdidos com o processo de envelhecimento. Utilizado para redefinir contornos anatômicos essenciais da face, como maçãs do rosto, mandíbula e queixo."
+                },
+                {
+                    titulo: "Rejuvenescimento Facial",
+                    detalhado: "Abordagem terapêutica integrada que combina diferentes técnicas estéticas personalizadas para amenizar os sinais do tempo na face. Une tratamentos que combatem a perda de volume, manchas e linhas de expressão, devolvendo vitalidade global ao rosto."
+                },
+                {
+                    titulo: "Tratamento para Flacidez de Pele",
+                    detalhado: "Protocolos clínicos avançados baseados em tecnologias e bioestimuladores de ponta que visam reverter o afrouxamento dos tecidos cutâneos. Estimulam as células estruturais da derme a produzirem novas fibras de sustentação corporais e faciais."
+                }
+            ]
         }
     ],
 
-    biografia: {
-        fotoDoutor: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=cover&crop=faces",
-        fotoCertificado: "https://museudavida.org.br/images/diplomas/medicina_preventiva.jpg"
-    },
-
     contatos: {
-        whatsappNumero: "0000000000000", 
-        whatsappTexto: "(XX) XXXXX-XXXX",  
-        telefoneNumero: "+000000000000", 
-        telefoneTexto: "(XX) XXXX-XXXX"   
+        whatsappNumero: "5511999999999", 
+        whatsappTexto: "(11) 99999-9999",  
+        telefoneNumero: "+551133333333", 
+        telefoneTexto: "(11) 3333-3333"   
     }
 };
 
-// Resolução de links do Google Drive se houver necessidade
 function resolverLinkImagem(url) {
     if (url.includes('drive.google.com')) {
         let id = '';
@@ -68,16 +144,14 @@ function resolverLinkImagem(url) {
     return url;
 }
 
-// INICIALIZAÇÃO DINÂMICA
+// Inicializador Principal do DOM
 document.addEventListener("DOMContentLoaded", function() {
-    // Aplicando Imagens Perfil e Certificados
-    document.getElementById('doctorImg').src = resolverLinkImagem(CONFIG.biografia.fotoDoutor);
-    document.getElementById('certificateImg').src = resolverLinkImagem(CONFIG.biografia.fotoCertificado);
-    
-    // Aplicando Link do Vídeo Principal
-    document.getElementById('mainVideo').src = CONFIG.videoApresentacao;
+    const mainVideo = document.getElementById('mainVideo');
+    if (mainVideo) {
+        mainVideo.src = CONFIG.videoApresentacao;
+    }
 
-    // Renderização do Carrossel Hero
+    // Renderizador do Carrossel Hero
     const containerSlides = document.getElementById('carouselSlides');
     const containerDots = document.getElementById('carouselDots');
     
@@ -89,11 +163,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const statusClasse = index === 0 ? 'active' : '';
             containerSlides.insertAdjacentHTML('beforeend', `
                 <div class="slide ${statusClasse}">
-                    <img src="${resolverLinkImagem(slide.imagem)}" alt="${slide.titulo}">
-                    <div class="slide-content">
-                        <h2>${slide.titulo}</h2>
-                        <p>${slide.texto}</p>
-                    </div>
+                    <img src="${resolverLinkImagem(slide.imagem)}" alt="Consultório Dr. Ari Gonçalves">
                 </div>
             `);
             containerDots.insertAdjacentHTML('beforeend', `
@@ -101,7 +171,6 @@ document.addEventListener("DOMContentLoaded", function() {
             `);
         });
 
-        // Configurando eventos dos cliques nos dots do carrossel
         document.querySelectorAll('.dot').forEach(dot => {
             dot.addEventListener('click', function() {
                 const index = parseInt(this.getAttribute('data-index'));
@@ -110,47 +179,70 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Renderização das Áreas de Atuação
+    // Novo Renderizador com Categorias e Organização Tipográfica (Sem Ícones)
     const containerServicos = document.getElementById('servicesGrid');
     if (containerServicos) {
         containerServicos.innerHTML = "";
-        CONFIG.servicos.forEach((servico, index) => {
-            containerServicos.insertAdjacentHTML('beforeend', `
-                <div class="service-card" data-index="${index}">
-                    <div class="service-img-container">
-                        <img src="${resolverLinkImagem(servico.imagem)}" alt="${servico.titulo}">
+        
+        CONFIG.categoriasProcedimentos.forEach((categoria, catIndex) => {
+            // Cria a estrutura do bloco de categoria
+            let htmlCategoria = `
+                <div class="category-block">
+                    <h3 class="category-title">${categoria.nomeCategoria}</h3>
+                    <div class="category-grid-items">
+            `;
+            
+            categoria.itens.forEach((item, itemIndex) => {
+                htmlCategoria += `
+                    <div class="service-text-card" data-cat="${catIndex}" data-item="${itemIndex}">
+                        <h4>${item.titulo}</h4>
+                        <span class="card-action">Saber mais</span>
                     </div>
-                    <div class="service-meta">
-                        <h3>${servico.titulo}</h3>
-                        <p>${servico.descricao}</p>
+                `;
+            });
+            
+            htmlCategoria += `
                     </div>
                 </div>
-            `);
+            `;
+            
+            containerServicos.insertAdjacentHTML('beforeend', htmlCategoria);
         });
 
-        // Configurando eventos de cliques nos blocos de serviços
-        document.querySelectorAll('.service-card').forEach(card => {
+        // Configuração do gatilho de clique para abrir o Modal informativo
+        document.querySelectorAll('.service-text-card').forEach(card => {
             card.addEventListener('click', function() {
-                const index = parseInt(this.getAttribute('data-index'));
-                abrirModal(index);
+                const catIndex = parseInt(this.getAttribute('data-cat'));
+                const itemIndex = parseInt(this.getAttribute('data-item'));
+                abrirModal(catIndex, itemIndex);
             });
         });
     }
 
-    // Configuração dos Contatos Principais
-    const msgWhats = encodeURIComponent("Olá! Gostaria de solicitar informações sobre agendamento de consultas com o Dr. Alexander Vadim.");
-    document.getElementById('btnWhatsapp').href = `https://wa.me/${CONFIG.contatos.whatsappNumero}?text=${msgWhats}`;
-    document.getElementById('textoWhatsapp').innerText = CONFIG.contatos.whatsappTexto;
-    document.getElementById('linkTelefone').href = `tel:${CONFIG.contatos.telefoneNumero}`;
-    document.getElementById('textoTelefone').innerText = CONFIG.contatos.telefoneTexto;
+    // Configurações de links de contato
+    const msgWhats = encodeURIComponent("Olá! Gostaria de agendar uma avaliação com o cirurgião Dr. Ari Gonçalves.");
+    
+    const btnWhats = document.getElementById('btnWhatsapp');
+    if (btnWhats) btnWhats.href = `https://wa.me/${CONFIG.contatos.whatsappNumero}?text=${msgWhats}`;
+    
+    const txtWhats = document.getElementById('textoWhatsapp');
+    if (txtWhats) txtWhats.innerText = CONFIG.contatos.whatsappTexto;
+    
+    const lnkTel = document.getElementById('linkTelefone');
+    if (lnkTel) lnkTel.href = `tel:${CONFIG.contatos.telefoneNumero}`;
+    
+    const txtTel = document.getElementById('textoTelefone');
+    if (txtTel) txtTel.innerText = CONFIG.contatos.telefoneTexto;
 
-    // Proteção de Imagem com clique direito
+    // Trava de clique direito sobre imagens de segurança do carrossel/logo
     document.addEventListener('contextmenu', function(e) {
-        if (e.target.tagName === 'IMG') e.preventDefault();
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
     }, false);
 });
 
-// LÓGICA DO CARROSSEL AUTOPLAY
+// Lógica de Transição do Carrossel
 let slideIndex = 0;
 
 function updateCarousel() {
@@ -179,21 +271,31 @@ function currentSlide(i) {
 
 let carouselInterval = setInterval(nextSlide, 5000);
 
-// CONTROLE DA JANELA MODAL POPUP
-function abrirModal(index) {
-    const servico = CONFIG.servicos[index];
-    document.getElementById('modalImg').src = resolverLinkImagem(servico.imagem);
-    document.getElementById('modalTitle').innerText = servico.titulo;
-    document.getElementById('modalDescription').innerText = servico.detalhado;
+// Funções de Controle do Modal (Tipografia pura e sem suporte a ícones)
+function abrirModal(catIndex, itemIndex) {
+    const servico = CONFIG.categoriasProcedimentos[catIndex].itens[itemIndex];
     
-    const msgCustomizada = encodeURIComponent(`Olá! Gostaria de mais informações detalhadas sobre o procedimento de: ${servico.titulo}.`);
-    document.getElementById('modalActionLink').href = `https://wa.me/${CONFIG.contatos.whatsappNumero}?text=${msgCustomizada}`;
+    const modalTitle = document.getElementById('modalTitle');
+    if (modalTitle) {
+        modalTitle.innerHTML = `<span>${servico.titulo}</span>`;
+    }
     
-    document.getElementById('serviceModal').classList.add('active');
+    const modalDescription = document.getElementById('modalDescription');
+    if (modalDescription) {
+        modalDescription.innerText = servico.detalhado;
+    }
+    
+    const serviceModal = document.getElementById('serviceModal');
+    if (serviceModal) {
+        serviceModal.classList.add('active');
+    }
     document.body.style.overflow = 'hidden';
 }
 
 function fecharModal(event) {
-    document.getElementById('serviceModal').classList.remove('active');
+    const serviceModal = document.getElementById('serviceModal');
+    if (serviceModal) {
+        serviceModal.classList.remove('active');
+    }
     document.body.style.overflow = '';
 }
