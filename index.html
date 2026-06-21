@@ -6,25 +6,31 @@
     <title>Dr. Ari Gonçalves | Cirurgião Plástico</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <img src="https://www.saogoncaloshopping.com.br/_next/image?url=https%3A%2F%2Fpublic.esperienza.com.br%2Fsaogoncaloshopping-hTSS9TgSYUnv6G5ABNPRm7xqoTXHGGjU%2Floja%2F141-26-12-2023-ERHUF8PGXV.jpg&w=3840&q=75" alt="Vip Clinique Oficial" class="header-logo">
+            <img src="https://www.saogoncaloshopping.com.br/_next/image?url=https%3A%2F%2Fpublic.esperienza.com.br%2Fsaogoncaloshopping-hTSS9TgSYUnv6G5ABNPRm7xqoTXHGGjU%2Floja%2F141-26-12-2023-ERHUF8PGXV.jpg&w=3840&q=75" alt="Vip Clinique Oficial" class="header-logo" draggable="false">
             <h1>Doutor Ari Gonçalves</h1>
             <p class="subtitle">Cirurgia Plástica com a segurança de mais de 30 anos de experiência.</p>
         </div>
     </header>
 
     <section class="hero-carousel">
-        <div class="carousel-track" id="carouselSlides"></div>
+        <div class="carousel-track" id="carouselSlides">
+            <div class="slide active"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1468&auto=format&fit=cover" alt="Consultório Dr. Ari Gonçalves 1"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1470&auto=format&fit=cover" alt="Consultório Dr. Ari Gonçalves 2"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1584515933487-78021db49905?q=80&w=1470&auto=format&fit=cover" alt="Consultório Dr. Ari Gonçalves 3"></div>
+        </div>
     </section>
     
     <div class="carousel-dots-wrapper">
-        <div class="carousel-nav" id="carouselDots"></div>
+        <div class="carousel-nav" id="carouselDots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
     </div>
 
     <div class="container">
@@ -33,14 +39,154 @@
                 <h2>Conheça o Dr. Ari Gonçalves</h2>
                 <div class="video-highlight-container">
                     <div class="video-wrapper">
-                        <iframe id="mainVideo" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe id="mainVideo" src="https://www.youtube.com/embed/Nql4yQsVpHk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </section>
 
             <section class="services-section">
                 <h2>Procedimentos</h2>
-                <div class="services-text-grid" id="servicesGrid"></div>
+                <div class="services-text-grid">
+                    
+                    <div class="category-block">
+                        <h3 class="category-title">Cirurgia Facial</h3>
+                        <div class="category-grid-items">
+                            <button class="service-text-card" type="button">
+                                <h4>Blefaroplastia</h4>
+                                <p class="service-description">Cirurgia indicada para o rejuvenescimento da região orbital. O procedimento remove com precisão o excesso de pele flácida e as bolsas de gordura das pálpebras superiores e inferiores, suavizando o aspecto de olhar cansado ou envelhecido e restabelecendo o contorno natural dos olhos.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Cirurgia do Xantelasma</h4>
+                                <p class="service-description">Procedimento cirúrgico ambulatorial dedicado à remoção de depósitos amarelados de colesterol (xantelasmas) localizados nas pálpebras. Realizado sob anestesia local, foca na excisão delicada da lesão e no fechamento com suturas finas para preservar a estética da região periocular.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Excisão e Sutura Simples</h4>
+                                <p class="service-description">Intervenção cirúrgica de pequeno porte realizada em ambiente ambulatorial para a retirada de pequenas lesões cutâneas, sinais, pintas ou irregularidades na pele. A técnica prioriza o fechamento meticuloso das bordas para assegurar uma cicatrização discreta.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Exerese de Cisto Dermoide</h4>
+                                <p class="service-description">Remoção cirúrgica completa e segura de nódulos subcutâneos benignos (cistos dermoides). O procedimento é planejado por meio de incisões estratégicas posicionadas ao longo das linhas de força da pele, visando minimizar a visibilidade de cicatrizes futuras.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Lifting Facial (Ritidoplastia)</h4>
+                                <p class="service-description">Cirurgia de alta complexidade desenhada para tratar de forma global o envelhecimento da face e do pescoço. Através do reposicionamento profundo dos tecidos musculares e da remoção do excesso de pele flácida, redefine o contorno da mandíbula e atenua sulcos profundos com elegância e naturalidade.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Otoplastia</h4>
+                                <p class="service-description">Cirurgia plástica estruturada para corrigir alterações estéticas ou anatomicas na orelha externa, com destaque para a correção das chamadas 'orelhas de abano'. O procedimento remodela a cartilagem local, conferindo um posicionamento mais simétrico e proporcional à face.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Rinoplastia</h4>
+                                <p class="service-description">Procedimento cirúrgico altamente personalizado voltado para a remodelação da estrutura nasal. Visa harmonizar o formato, a projeção e a ponta do nariz em relação ao restante do rosto, mantendo ou aprimorando rigorosamente a função respiratória do paciente.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Septoplastia</h4>
+                                <p class="service-description">Cirurgia funcional corretiva que tem como objetivo alinhar o septo nasal quando este apresenta desvios que obstruem as vias aéreas. Ao centralizar o septo, elimina-se o bloqueio mecânico ao fluxo de ar, trazendo alívio para dificuldades respiratórias e roncos.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Turbinectomia</h4>
+                                <p class="service-description">Intervenção cirúrgica direcionada à redução volumétrica das conchas nasais (cornetos hipertróficos), popularmente conhecidas como 'carne esponjosa'. É indicada para o tratamento da obstruction nasal crônica que não respondeu adequadamente aos tratamentos clínicos.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="category-block">
+                        <h3 class="category-title">Cirurgia Corporal e Mamária</h3>
+                        <div class="category-grid-items">
+                            <button class="service-text-card" type="button">
+                                <h4>Abdominoplastia</h4>
+                                <p class="service-description">Cirurgia plástica indicada para a restauração do contorno abdominal. O procedimento remove o excesso de pele e o tissue adiposo localizado abaixo do umbigo, além de realizar a plicatura (reaproximação e sutura) dos músculos retos abdominais para corrigir a diástase.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Cirurgia de Ginecomastia</h4>
+                                <p class="service-description">Procedimento focado na correção do aumento benigno e excessivo das mamas em pacientes do sexo masculino. Combina a remoção cirúrgica direta do tecido glandular hipertrófico com a lipoaspiração da gordura adjacente, restabelecendo um contorno peitoral plano e natural.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Lipoaspiração</h4>
+                                <p class="service-description">Técnica cirúrgica desenhada para a remoção precisa de depósitos de gordura localizada que persistem mesmo com hábitos saudáveis, dieta e exercícios. É indicada para harmonizar e esculpir o contorno corporal em áreas como abdômen, flancos, coxas e braços.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Mamoplastia de Aumento</h4>
+                                <p class="service-description">Cirurgia voltada para o incremento do volume, projeção e simetria das mamas por meio do uso de implantes de silicone de última geração. O plano de colocação e o perfil da prótese são discutidos e escolhidos individualmente, adequando-se ao biotipo da paciente.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Mamoplastia Redutora</h4>
+                                <p class="service-description">Procedimento indicado para diminuir o tamanho e o peso das mamas quando o excesso de tecido causa dores na coluna, desconforto nos ombros ou desproporção estética. A cirurgia remove gordura, glândula e pele, reestruturando a mama em uma posição mais alta.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Mastopexia</h4>
+                                <p class="service-description">Também conhecida como 'lifting de mamas', reposiciona e remodela mamas que apresentam queda (ptose mamária) devido à amamentação, oscilações de peso ou envelhecimento. O tissue é suspenso, o excesso de pele é retirado e a aréola é elevada para um formato firme.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Prótese de Mama</h4>
+                                <p class="service-description">Inclusão especializada de implantes mamários de gel de silicone altamente coeso. O procedimento atende pacientes que buscam reestabelecer o volume e o colo mamário perdidos com o tempo ou obter ganho de volume, priorizando a segurança e a biocompatibilidade.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="category-block">
+                        <h3 class="category-title">Procedimentos Estéticos e Injetáveis</h3>
+                        <div class="category-grid-items">
+                            <button class="service-text-card" type="button">
+                                <h4>Ácido Poliláctico (Sculptra)</h4>
+                                <p class="service-description">Tratamento injetável moderno com foco no estímulo biológico de colágeno. Atua nas camadas profundas da pele reestruturando os tecidos, combatendo de forma progressiva a flacidez e melhorando visivelmente a firmeza e a espessura cutânea facial ou corporal.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Aplicação de Toxina Botulínica</h4>
+                                <p class="service-description">Procedimento minimamente invasivo consagrado para o tratamento e prevenção de rugas dinâmicas (linhas formadas pela mímica facial, como na testa e pés de galinha). Age relaxando temporariamente os músculos aplicados, conferindo um aspecto descansado.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Microagulhamento</h4>
+                                <p class="service-description">Procedimento estético que utiliza um dispositivo com microagulhas estéreis para criar canais microscópicos controlados na derme. Esse estímulo induz a produção natural de colágeno e elastina, sendo ideal para suavizar cicatrizes, poros abertos e estrias.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Peeling Químico</h4>
+                                <p class="service-description">Aplicação orientada de soluções químicas sobre a pele para promover uma descamação controlada e acelerar a renovação celular. Indicado para melhorar a textura epidérmica global, atenuar manchas superficiais, melasma e sequelas de acne.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Preenchimento Cutâneo</h4>
+                                <p class="service-description">Técnica focada na atenuação direta de rugas estáticas e sulcos profundos (como o sulco nasogeniano, conhecido como 'bigode chinês'). Proporciona um efeito de sustentação e nivelamento imediato através da aplicação nas camadas específicas da pele.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Preenchimento Facial</h4>
+                                <p class="service-description">Uso estratégico de preenchedores biocompatíveis (como o ácido hialurônico) para repor os volumes perdidos com o processo de envelhecimento. Utilizado para redefinir contornos anatômicos essenciais da face, como maçãs do rosto, mandíbula e queixo.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Rejuvenescimento Facial</h4>
+                                <p class="service-description">Abordagem terapêutica integrada que combina diferentes técnicas estéticas personalizadas para amenizar os sinais do tempo na face. Une tratamentos que combatem a perda de volume, manchas e linhas de expressão, devolvendo vitalidade global ao rosto.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                            <button class="service-text-card" type="button">
+                                <h4>Tratamento para Flacidez de Pele</h4>
+                                <p class="service-description">Protocolos clínicos avançados baseados em tecnologias e bioestimuladores de ponta que visam reverter o afrouxamento dos tecidos cutâneos. Estimulam as células estruturais da derme a produzirem novas fibras de sustentação corporais e faciais.</p>
+                                <span class="card-action">Saber mais</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
             </section>
 
             <section class="contact-section">
@@ -48,17 +194,17 @@
                 <div class="contact-grid">
                     <a href="mailto:exemplo@gmail.com" class="contact-card">
                         <span>Por Email</span>
-                        <h4 id="textoEmail">exemplo@gmail.com</h4>
+                        <h4>exemplo@gmail.com</h4>
                     </a>
                     
-                    <a href="#" id="linkTelefone" class="contact-card">
+                    <a href="tel:+551133333333" class="contact-card">
                         <span>Por Telefone</span>
-                        <h4 id="textoTelefone">(XX) XXXX-XXXX</h4>
+                        <h4>(11) 3333-3333</h4>
                     </a>
                     
-                    <a href="#" id="btnWhatsapp" target="_blank" rel="noopener" class="contact-card">
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20o%20cirurgi%C3%A3o%20Dr.%20Ari%20Gon%C3%A7alves." target="_blank" rel="noopener" class="contact-card">
                         <span>Por Chat</span>
-                        <h4 id="textoWhatsapp">(XX) XXXXX-XXXX</h4>
+                        <h4>(11) 99999-9999</h4>
                     </a>
                 </div>
             </section>
@@ -69,16 +215,14 @@
         </footer>
     </div>
 
-    <div class="modal-overlay" id="serviceModal" onclick="fecharModal(event)">
-        <div class="modal-container" onclick="event.stopPropagation()">
-            <button class="modal-close-btn" onclick="fecharModal(event)">✕</button>
-            <div class="modal-content">
-                <h3 id="modalTitle"></h3>
-                <div class="modal-divider"></div>
-                <p id="modalDescription">Descrição detalhada do procedimento.</p>
-            </div>
+    <dialog id="serviceModal" class="modal-container">
+        <button class="modal-close-btn" id="closeModalBtn" aria-label="Fechar">✕</button>
+        <div class="modal-content">
+            <h3 id="modalTitle"></h3>
+            <div class="modal-divider"></div>
+            <p id="modalDescription"></p>
         </div>
-    </div>
+    </dialog>
 
     <script src="script.js"></script>
 </body>
