@@ -3,7 +3,7 @@ const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 const modal = document.getElementById('serviceModal');
 
-// 1. Controle do Carrossel Hero
+// 1. Controle Fluido do Carrossel Hero
 function updateCarousel() {
     slides.forEach((s, i) => s.classList.toggle('active', i === slideIndex));
     dots.forEach((d, i) => d.classList.toggle('active', i === slideIndex));
@@ -23,19 +23,22 @@ dots.forEach(dot => {
     });
 });
 
-// 2. Captura dinâmica do conteúdo interno do Card para o Modal
+// 2. Acoplamento de dados do card nativo para o Modal com ativação de foco
 document.querySelectorAll('.service-text-card').forEach(card => {
-    card.addEventListener('click', function() {
-        const titulo = this.querySelector('h4').innerText;
-        const descricao = this.querySelector('.service-description').innerText;
+    const openModal = function() {
+        const titulo = card.querySelector('h4').innerText;
+        const descricao = card.querySelector('.service-description').innerText;
         
         document.getElementById('modalTitle').innerText = titulo;
         document.getElementById('modalDescription').innerText = descricao;
         
-        modal.showModal(); 
-    });
+        modal.showModal();
+    };
+
+    card.addEventListener('click', openModal);
+    card.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
 });
 
-// Fechamento do Modal com clique no botão ou na área externa
+// Fechamento Nativo
 document.getElementById('closeModalBtn').addEventListener('click', () => modal.close());
 modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });

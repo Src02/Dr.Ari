@@ -23,6 +23,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* ARQUITETURA TIPOGRÁFICA EDITORIAL CRÍTICA */
 header h1, 
 header .subtitle,
 .video-section h2,
@@ -193,7 +194,7 @@ header .subtitle {
     border: 0;
 }
 
-/* SEÇÃO PROCEDIMENTOS (ABORDAGEM SEAMLESS PREMIUM) */
+/* SEÇÃO PROCEDIMENTOS (SEAMLESS GRID) */
 .services-section {
     margin-bottom: 80px;
 }
@@ -226,7 +227,7 @@ header .subtitle {
     gap: 16px;
 }
 
-/* Reset de botões para comportarem-se como cards interativos limpos */
+/* Elementos do Grid Agindo como Botões Premium Invisíveis */
 .service-text-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -240,11 +241,11 @@ header .subtitle {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    outline: none;
+    user-select: none;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, background-color 0.4s ease;
 }
 
-/* O texto descritivo fica oculto no grid e serve apenas como ponte de dados para o modal */
+/* A descrição fica em cache estrutural, garantindo o visual limpo do grid */
 .service-description {
     display: none;
 }
@@ -265,10 +266,10 @@ header .subtitle {
     color: var(--accent-color);
     font-weight: 600;
     margin-top: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif; /* Escopo Sans-serif claro */
     transition: color 0.3s ease;
 }
 
-/* Efeito Hover Minimalista Sem Quebras */
 .service-text-card:hover {
     transform: translateY(-2px);
     border-color: var(--accent-dark);
@@ -280,7 +281,7 @@ header .subtitle {
 .service-text-card:hover h4 { color: var(--accent-dark); }
 .service-text-card:hover .card-action { color: var(--text-main); }
 
-/* DESIGN PREMIUM DO DIALOG NATIVO */
+/* DESIGN EDITORIAL DO MODAL NATIVO */
 dialog.modal-container {
     border: none;
     border-radius: 12px;
@@ -292,11 +293,10 @@ dialog.modal-container {
     position: fixed;
     inset: 0;
     opacity: 0;
-    transform: scale(0.96);
+    transform: scale(0.97);
     transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), display 0.4s allow-discrete;
 }
 
-/* Estado ativo do modal controlado nativamente pelo navegador */
 dialog.modal-container[open] {
     opacity: 1;
     transform: scale(1);
@@ -346,6 +346,7 @@ dialog.modal-container[open]::backdrop {
     margin-bottom: 24px;
 }
 
+/* O corpo do texto no modal herda a leitura limpa do ecossistema Sans-serif */
 .modal-content p {
     font-size: 1.05rem;
     color: var(--text-muted);
@@ -431,7 +432,7 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
-/* RESPONSIVIDADE REVISADA */
+/* RESPONSIVIDADE */
 @media (max-width: 1024px) {
     .hero-carousel { height: 450px; }
     .category-grid-items { grid-template-columns: repeat(2, 1fr); }
